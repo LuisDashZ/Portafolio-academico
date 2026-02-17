@@ -6,6 +6,17 @@
 
     <!-- Estilos básicos de la página -->
     <style>
+    .imagen-trabajo {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.imagen-trabajo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f4f4f4;
@@ -39,6 +50,7 @@
             color: #555;
             font-size: 14px;
         }
+
     </style>
 </head>
 
@@ -74,11 +86,16 @@
         -->
 
         <ul>
-            <li>Trabajo 1: Demanda de energía en el mes de Febrero
-                <a href="demanda_febrero.xlsx"></a>
+    <li>Trabajo 1: Demanda de energía en el mes de Febrero
 
-            </li>
-        </ul>
+        <div class="imagen-trabajo">
+            <img src="demanda_febrero.png" alt="Gráfica de demanda de energía en febrero">
+        </div>
+        
+        <a href="demanda_febrero.xlsx">datos</a>
+    </li>
+</ul>
+
     </section>
 
     <!-- Pie de página -->
