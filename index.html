@@ -2,105 +2,183 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Académico - Luis Felipe García Orozco</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <!-- Estilos básicos de la página -->
     <style>
-    .imagen-trabajo {
-    text-align: center;
-    margin: 15px 0;
-}
-
-.imagen-trabajo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-}
+        :root {
+            --primary: #2563eb; /* Azul ingeniería */
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #3b82f6;
+        }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
             margin: 0;
-            padding: 0;
+            line-height: 1.6;
         }
 
         header {
-            padding: 20px;
+            background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
+            color: white;
+            padding: 60px 20px;
             text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            opacity: 0.8;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
         }
 
         section {
-            background-color: white;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 8px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
 
         h2 {
-            color: #1F1E1C;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
         }
 
-        ul {
-            list-style-type: square;
+        /* Grid de Trabajos */
+        .grid-trabajos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        .card.upcoming {
+            border: 2px dashed #cbd5e1;
+            background-color: #f1f5f9;
+            color: #94a3b8;
+        }
+
+        .btn-ver {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Visor de PDF */
+        .pdf-container {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 15px;
         }
 
         footer {
             text-align: center;
-            padding: 10px;
-            color: #555;
-            font-size: 14px;
+            padding: 40px;
+            color: #64748b;
         }
 
+        .badge {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Encabezado principal -->
     <header>
         <h1>Luis Felipe García Orozco</h1>
-        <h2>Facultad de Ingeniería Eléctrica</h2>
-        <p>Probabilidad y Estadística</p>
+        <p>Facultad de Ingeniería Eléctrica | Probabilidad y Estadística</p>
     </header>
 
-    <!-- Sección de perfil académico -->
-    <section>
-        <h2>Perfil Académico</h2>
-        <p>
-            Bienvenido a mi portafolio académico. Aquí recopilo los proyectos y
-            asignaciones desarrollados durante mi formación en la Facultad de
-            Ingeniería Eléctrica.
-        </p>
-    </section>
+    <div class="container">
+        <section>
+            <h2>Perfil Académico</h2>
+            <p>Estudiante de Ingeniería Eléctrica enfocado en sistemas de control y automatización. Este portafolio digital presenta los avances técnicos y proyectos desarrollados en mi trayectoria universitaria.</p>
+        </section>
 
-    <!--trabajos-->
-    <section>
-        <h2>Trabajos y Proyectos</h2>
+        <section>
+            <h2>Documento Reciente</h2>
+            </iframe>
+        </section>
 
-        <!-- 
+        <section>
+            <h2>Trabajos y Proyectos</h2>
+            <div class="grid-trabajos">
+                
+                <div class="card">
+                    <div>
+                        
+                    </div>
+                </div>
 
-        Ejemplo:
-        <li>
-            <a href="tarea1.pdf">Tarea 1 - Leyes de Kirchhoff</a>
-        </li>
-        -->
+                <div class="card upcoming">
+                    <div>
+                     
+                </div>
 
-        <ul>
-    <li>Trabajo 1: Demanda de energía en el mes de Febrero
+                <div class="card upcoming">
+                    <div>
+                        <span class="badge" style="background:#e2e8f0; color:#475569">EN DESARROLLO</span>
+                        <h3>Automatización en Python</h3>
+                        <p>Script para extracción de datos de recibos CFE y gestión de Excel.</p>
+                    </div>
+                </div>
 
-        <div class="imagen-trabajo">
-            <img src="demanda_febrero.png" alt="Gráfica de demanda de energía en febrero">
-        </div>
-        
-        <a href="demanda_febrero.xlsx">datos</a>
-    </li>
-</ul>
+            </div>
+        </section>
+    </div>
 
-    </section>
-
-    <!-- Pie de página -->
     <footer>
-        <p>Portafolio académico © 2026</p>
+        <p>© 2026 - Universidad Michoacana de San Nicolás de Hidalgo</p>
     </footer>
 
 </body>
