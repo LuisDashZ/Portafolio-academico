@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.1.0/dist/chartjs-plugin-annotation.min.js"></script>
     
     <style>
-        /* (Se mantienen exactamente los mismos estilos visuales que ya tenías) */
+        /* estilos */
         :root { --primary-color: #1e3a8a; --secondary-color: #2563eb; --bg-color: #f8fafc; --text-color: #334155; --card-bg: #ffffff; }
         body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; line-height: 1.6; }
         header { background-color: var(--primary-color); color: white; padding: 3rem 2rem; text-align: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
@@ -55,7 +55,7 @@
 
             <div class="proyecto-card proyecto-destacado">
                 <h3 style="color: #10b981; margin-top: 0;">1. Análisis Estadístico de Recibos CFE (Base de Datos Global)</h3>
-                <p>Herramienta conectada a Firebase. Los datos extraídos de los recibos se almacenan en la nube y construyen un modelo estadístico global de forma colaborativa.</p>
+                <p>Compara el recibo pdf subido con los de la base de datos y calcula la media, mediana, moda, desviacion estandar y varianza.</p>
                 
                 <input type="file" id="pdfInput" accept="application/pdf">
                 <button id="btnProcesar" onclick="procesarPDF()">Procesar Recibo</button>
@@ -90,13 +90,11 @@
     </div>
 
     <script type="module">
-        // Importar funciones de Firebase
+        // funciones de Firebase
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
         import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
-        // =========================================================
-        // ⚠️ PEGA AQUÍ TU firebaseConfig GENERADO EN EL PASO 3 ⚠️
-        // =========================================================
+
         const firebaseConfig = {
         apiKey: "AIzaSyBGUzLWJ7k_EgBrIRVf5jpF5VTjpcRj9sw",
         authDomain: "portafolio-academico-9dd37.firebaseapp.com",
@@ -114,7 +112,7 @@
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
         let chartInstance = null;
 
-        // Exponer funciones al entorno global (window) para que los botones HTML las detecten
+        // Exponer funciones al entorno global para que los botones HTML las detecten
         window.procesarPDF = async function() {
             const fileInput = document.getElementById('pdfInput');
             const statusMsg = document.getElementById('statusMensaje');
@@ -219,7 +217,7 @@
             }
         }
 
-        // --- LAS FUNCIONES MATEMÁTICAS SIGUEN SIENDO EXACTAMENTE LAS MISMAS ---
+        // operaciones
         function calcularEstadisticas(datos, valorActual) {
             const n = datos.length;
             const media = datos.reduce((a, b) => a + b, 0) / n;
@@ -292,3 +290,4 @@
 </body>
 
 </html>
+
